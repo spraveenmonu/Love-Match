@@ -1,0 +1,95 @@
+/* ── Privacy Screen ─────────────────────────────── */
+.privacy-screen-container {
+  text-align: center;
+  padding: var(--space-8) var(--space-6);
+  max-width: 500px;
+  margin: var(--space-4) auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 24px 56px rgba(231, 84, 128, 0.16), 0 4px 16px rgba(90, 42, 60, 0.05);
+  animation: bouncePop 0.45s var(--ease-spring) both;
+}
+
+.privacy-icon-box {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto var(--space-4) auto;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #FFE4EC 0%, #FFD6E3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(231, 84, 128, 0.22);
+  animation: floatGently 3.2s infinite ease-in-out;
+  border: 1.5px solid var(--border-soft);
+}
+
+.privacy-emoji {
+  font-size: 3.2rem;
+  line-height: 1;
+  animation: gentleWiggle 3.5s infinite ease-in-out;
+  display: inline-block;
+}
+
+.privacy-heart-float {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  font-size: 1.6rem;
+  animation: heartPulse 1.8s infinite ease-in-out;
+  filter: drop-shadow(0 2px 6px rgba(231, 84, 128, 0.3));
+}
+
+.privacy-title {
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.privacy-lead {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: var(--space-2);
+}
+
+.privacy-person-name {
+  color: var(--accent-deep);
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFF0F5 0%, #FFE4EC 100%);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-soft);
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(231, 84, 128, 0.1);
+}
+
+.privacy-subtitle {
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+  line-height: 1.5;
+}
+
+.privacy-no-peeking-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-full);
+  background: #FFF5F8;
+  border: 1.5px dashed var(--accent-pink);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: var(--space-6);
+  box-shadow: 0 2px 8px rgba(231, 84, 128, 0.06);
+  animation: floatGently 4s infinite ease-in-out;
+}
+
+.privacy-ready-btn {
+  margin-top: var(--space-2);
+  font-size: 1.1rem;
+}

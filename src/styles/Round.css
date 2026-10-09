@@ -1,0 +1,121 @@
+/* ── Round Screen ──────────────────────────────── */
+.round-screen {
+  position: relative;
+  z-index: 1;
+}
+
+.round-header {
+  margin-bottom: var(--space-4);
+}
+
+.round-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.round-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background: var(--purple-100);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--purple-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.round-person {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background: var(--pink-100);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--pink-600);
+}
+
+.round-instruction {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-500);
+  margin-bottom: var(--space-6);
+  padding: var(--space-2) var(--space-4);
+  background: var(--warm-50);
+  border-radius: var(--radius-sm);
+}
+
+/* ── Handoff / Privacy Screen ──────────────────── */
+.handoff-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  gap: var(--space-8);
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.handoff-emoji {
+  font-size: 5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.handoff-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 900;
+  color: var(--gray-800);
+}
+
+.handoff-name {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.handoff-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--gray-500);
+  font-weight: 600;
+  max-width: 300px;
+}
+
+.handoff-round-info {
+  font-size: var(--font-size-sm);
+  color: var(--gray-400);
+  font-weight: 700;
+}
+
+/* ── Round Complete ────────────────────────────── */
+.round-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: var(--space-6);
+  text-align: center;
+  animation: scaleIn 0.5s ease;
+}
+
+.round-complete-emoji {
+  font-size: 4rem;
+}
+
+.round-complete-score {
+  font-size: var(--font-size-3xl);
+  font-weight: 900;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

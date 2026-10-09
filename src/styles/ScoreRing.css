@@ -1,0 +1,120 @@
+/* ── ScoreRing ──────────────────────────────────── */
+.score-ring-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin: var(--space-3) 0;
+}
+
+.score-ring-container {
+  position: relative;
+  width: 204px;
+  height: 204px;
+  filter: drop-shadow(0 10px 24px rgba(231, 84, 128, 0.22));
+}
+
+.score-ring-aura {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 143, 171, 0.4);
+  pointer-events: none;
+  animation: auraPulse 3s ease-out infinite;
+}
+
+.score-ring-container.small {
+  width: 116px;
+  height: 116px;
+  filter: drop-shadow(0 4px 12px rgba(231, 84, 128, 0.16));
+}
+
+.score-ring-container.small .score-ring-aura {
+  display: none;
+}
+
+.score-ring-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.score-ring-bg {
+  fill: none;
+  stroke: var(--bg-tertiary);
+  stroke-width: 8;
+  opacity: 0.55;
+}
+
+.score-ring-progress {
+  fill: none;
+  stroke: url(#scorePinkGradient);
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.score-ring-container.small .score-ring-bg,
+.score-ring-container.small .score-ring-progress {
+  stroke-width: 7;
+}
+
+.score-ring-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.score-ring-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--accent-deep);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.score-ring-number.score-pop {
+  animation: bouncePop 0.5s var(--ease-spring) both;
+}
+
+.score-ring-container.small .score-ring-number {
+  font-size: 1.7rem;
+}
+
+.score-ring-percent {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent-pink);
+  margin-left: 2px;
+}
+
+.score-ring-container.small .score-ring-percent {
+  font-size: 0.9rem;
+}
+
+.score-ring-interpretation-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: linear-gradient(135deg, #FFF0F5 0%, #FFE4EC 100%);
+  border: 1.5px solid var(--accent-pink);
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  box-shadow: 0 4px 14px rgba(231, 84, 128, 0.12);
+  animation: floatGently 3.5s infinite ease-in-out;
+}
+
+.pill-star {
+  color: #F59E0B;
+  display: inline-block;
+  animation: sparkleTwinkle 2.2s infinite ease-in-out;
+}

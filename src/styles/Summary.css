@@ -1,0 +1,50 @@
+/* ── Summary Screen ─────────────────────────────── */
+.summary-screen {
+  min-height: 90vh;
+  padding: var(--space-4) 0 var(--space-12) 0;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary-screen-content {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary-screen-header {
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+.summary-screen-pill {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-deep);
+  background: var(--bg-secondary);
+  padding: 0.25rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-2);
+}
+
+.summary-screen-title {
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.summary-screen-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-width: 460px;
+  margin: 0 auto;
+}

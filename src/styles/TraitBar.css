@@ -1,0 +1,150 @@
+/* ── TraitBar ───────────────────────────────────── */
+.trait-bar-item {
+  margin-bottom: var(--space-4);
+  background: rgba(255, 240, 245, 0.55);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-soft);
+  transition: transform 0.26s var(--ease-spring), box-shadow 0.26s var(--ease-smooth);
+  box-shadow: 0 2px 6px rgba(231, 84, 128, 0.03);
+}
+
+.trait-bar-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(231, 84, 128, 0.12);
+  border-color: var(--accent-pink);
+}
+
+.trait-bar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.trait-bar-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.trait-bar-label {
+  font-weight: 800;
+  font-size: 0.96rem;
+  color: var(--text-primary);
+}
+
+.trait-leader-star {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #D97706;
+  background: #FEF3C7;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-full);
+  border: 1px solid #FCD34D;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  animation: floatGently 3s infinite ease-in-out;
+}
+
+.trait-score-val {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+}
+
+.trait-number {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--accent-deep);
+}
+
+.trait-unit {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.trait-track {
+  width: 100%;
+  height: 14px;
+  background: #FFFFFF;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  border: 1.5px solid var(--border-soft);
+  position: relative;
+}
+
+.trait-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(231, 84, 128, 0.3);
+}
+
+.trait-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: traitShimmer 2.2s linear infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes traitShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.trait-fill.fill-unconditional {
+  background: linear-gradient(90deg, #FF8FAB 0%, #FF6584 100%);
+}
+
+.trait-fill.fill-caring {
+  background: linear-gradient(90deg, #FFB3C6 0%, #FF8FAB 100%);
+}
+
+.trait-fill.fill-trueness {
+  background: linear-gradient(90deg, #F078A0 0%, #E75480 100%);
+}
+
+.caring-zone-indicator {
+  margin-top: var(--space-2);
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+}
+
+.caring-zone-tag {
+  display: inline-block;
+  background: #FFFFFF;
+  padding: 0.22rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.caring-too-much-note {
+  margin-top: var(--space-2);
+  font-size: 0.86rem;
+  color: #8C4A00;
+  background: #FFF7ED;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid #F59E0B;
+  animation: fadeInSlideUp 0.3s ease;
+}

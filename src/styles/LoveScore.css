@@ -1,0 +1,122 @@
+/* ── LoveScore Screen ──────────────────────────── */
+.lovescore-screen {
+  position: relative;
+  z-index: 1;
+}
+
+.lovescore-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  gap: var(--space-8);
+  text-align: center;
+}
+
+/* Calculating animation */
+.calculating-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.calculating-hearts {
+  display: flex;
+  gap: var(--space-3);
+  font-size: 2.5rem;
+}
+
+.calculating-heart {
+  animation: heartBeat 0.6s ease-in-out infinite alternate;
+}
+
+.calculating-heart:nth-child(2) { animation-delay: 0.15s; }
+.calculating-heart:nth-child(3) { animation-delay: 0.3s; }
+.calculating-heart:nth-child(4) { animation-delay: 0.45s; }
+.calculating-heart:nth-child(5) { animation-delay: 0.6s; }
+
+@keyframes heartBeat {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
+.calculating-text {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--gray-600);
+}
+
+.calculating-names {
+  font-size: var(--font-size-2xl);
+  font-weight: 900;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Result display */
+.lovescore-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lovescore-names {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--gray-800);
+}
+
+.lovescore-heart {
+  font-size: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.lovescore-interpretation {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--gray-600);
+  max-width: 300px;
+}
+
+.lovescore-days {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--gradient-warm);
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  color: var(--gray-800);
+  font-size: var(--font-size-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.lovescore-days-number {
+  font-size: var(--font-size-2xl);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.lovescore-fun-note {
+  font-size: var(--font-size-sm);
+  color: var(--gray-400);
+  font-weight: 600;
+}
+
+.lovescore-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: center;
+}

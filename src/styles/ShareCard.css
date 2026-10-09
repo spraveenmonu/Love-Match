@@ -1,0 +1,147 @@
+/* ── ShareCard ──────────────────────────────────── */
+.share-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+.share-card {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1080 / 1350;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  text-align: center;
+  gap: var(--space-6);
+}
+
+.share-card-bg-gradient {
+  background: linear-gradient(
+    160deg,
+    #f093fb 0%,
+    #f5576c 30%,
+    #ff6b9d 50%,
+    #a18cd1 70%,
+    #fbc2eb 100%
+  );
+}
+
+.share-card-logo {
+  font-size: var(--font-size-lg);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.share-card-names {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.share-card-name {
+  font-size: var(--font-size-2xl);
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.share-card-heart {
+  font-size: var(--font-size-3xl);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.share-card-scores {
+  display: flex;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.share-card-score-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.share-card-score-value {
+  font-size: var(--font-size-4xl);
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+}
+
+.share-card-score-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.share-card-divider {
+  width: 2px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+}
+
+.share-card-emoji {
+  font-size: 3rem;
+}
+
+.share-card-interpretation {
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  max-width: 280px;
+}
+
+.share-card-footer {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+/* ── Share Actions ─────────────────────────────── */
+.share-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.share-toast {
+  position: fixed;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gray-800);
+  color: white;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.3s ease, fadeOut 0.3s ease 2s forwards;
+  z-index: 200;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+}

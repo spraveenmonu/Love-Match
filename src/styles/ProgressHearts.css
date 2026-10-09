@@ -1,0 +1,129 @@
+/* ── 3-Step Progress Hearts ────────────────────────── */
+.progress-hearts {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto var(--space-5) auto;
+  padding: var(--space-2) var(--space-3);
+  position: relative;
+  z-index: 5;
+}
+
+.progress-hearts-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.progress-heart-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+
+.progress-heart-icon-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: #FFFFFF;
+  border: 2px solid var(--border-soft);
+  box-shadow: 0 4px 12px rgba(231, 84, 128, 0.08);
+  transition: all 0.28s var(--ease-spring);
+  z-index: 2;
+}
+
+.progress-heart-step.active .progress-heart-icon-wrap {
+  border-color: var(--accent-deep);
+  background: linear-gradient(135deg, #FFF5F8 0%, #FFE4EC 100%);
+  box-shadow: 0 0 0 5px rgba(231, 84, 128, 0.22), 0 8px 24px rgba(231, 84, 128, 0.25);
+  transform: scale(1.12);
+  animation: heartPulse 2.2s infinite ease-in-out;
+}
+
+.progress-heart-step.completed .progress-heart-icon-wrap {
+  border-color: var(--accent-pink);
+  background: var(--bg-secondary);
+  box-shadow: 0 4px 14px rgba(231, 84, 128, 0.12);
+}
+
+.progress-heart-symbol {
+  font-size: 1.55rem;
+  line-height: 1;
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.progress-heart-step.active .progress-heart-symbol {
+  transform: scale(1.1);
+}
+
+.progress-step-badge {
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  background: var(--accent-deep);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 900;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.progress-heart-step.completed .progress-step-badge {
+  background: #15803D;
+  transform: scale(1.05);
+}
+
+.progress-heart-step.upcoming .progress-step-badge {
+  background: var(--text-muted);
+}
+
+.progress-heart-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-top: var(--space-1);
+  color: var(--text-muted);
+  transition: color 0.2s var(--ease-smooth);
+  white-space: nowrap;
+}
+
+.progress-heart-step.active .progress-heart-title {
+  color: var(--accent-deep);
+  font-weight: 900;
+}
+
+.progress-heart-step.completed .progress-heart-title {
+  color: var(--text-primary);
+}
+
+.progress-hearts-connector {
+  position: absolute;
+  top: 24px;
+  left: calc(50% + 24px);
+  width: calc(100% - 48px);
+  height: 5px;
+  background: var(--border-soft);
+  border-radius: var(--radius-full);
+  z-index: 1;
+  transition: all 0.4s var(--ease-smooth);
+}
+
+.progress-hearts-connector.filled {
+  background: linear-gradient(90deg, #FF8FAB 0%, #E75480 50%, #FF8FAB 100%);
+  background-size: 200% 100%;
+  animation: shimmerGradient 2.2s linear infinite;
+  box-shadow: 0 0 10px rgba(231, 84, 128, 0.4);
+}

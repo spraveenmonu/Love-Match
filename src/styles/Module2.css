@@ -1,0 +1,262 @@
+/* ── Module 2 Screen ─────────────────────────────── */
+.module2-intro-box {
+  background: linear-gradient(180deg, #FFF9FB 0%, #FFF0F5 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin: var(--space-4) 0 var(--space-6) 0;
+  border: 1.5px solid var(--border-soft);
+  box-shadow: 0 4px 14px rgba(231, 84, 128, 0.05);
+}
+
+.intro-text {
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.intro-traits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.intro-trait-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  border: 1.5px solid var(--border-soft);
+  text-align: center;
+  transition: all 0.26s var(--ease-spring);
+  box-shadow: 0 2px 6px rgba(231, 84, 128, 0.04);
+}
+
+.intro-trait-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--accent-deep);
+  box-shadow: 0 8px 20px rgba(231, 84, 128, 0.15);
+}
+
+.intro-trait-card .trait-icon {
+  font-size: 1.6rem;
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.intro-trait-card:hover .trait-icon {
+  transform: scale(1.2) rotate(6deg);
+}
+
+.intro-trait-card strong {
+  font-size: 0.84rem;
+  color: var(--accent-deep);
+}
+
+.intro-trait-card span {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* ── Scenario Question Card ─────────────────────── */
+.scenario-turn-wrapper {
+  width: 100%;
+}
+
+.scenario-card {
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  animation: cardEnter 0.4s var(--ease-spring) both;
+}
+
+.scenario-prompt {
+  font-size: clamp(1.18rem, 3.8vw, 1.38rem);
+  color: var(--text-primary);
+  line-height: 1.45;
+  margin-bottom: var(--space-2);
+  font-weight: 800;
+  text-align: left;
+}
+
+.scenario-instruction {
+  font-size: 0.9rem;
+  color: var(--accent-deep);
+  font-weight: 700;
+  margin-bottom: var(--space-5);
+  text-align: left;
+}
+
+.scenario-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.scenario-option-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-4);
+  border: 2px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  background: #FFFFFF;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.24s var(--ease-spring);
+  font-family: var(--font-family);
+  min-height: 60px;
+  box-shadow: 0 2px 6px rgba(231, 84, 128, 0.04);
+}
+
+.scenario-option-btn:nth-child(1) { animation: optionSlideIn 0.35s var(--ease-smooth) 0.04s both; }
+.scenario-option-btn:nth-child(2) { animation: optionSlideIn 0.35s var(--ease-smooth) 0.08s both; }
+.scenario-option-btn:nth-child(3) { animation: optionSlideIn 0.35s var(--ease-smooth) 0.12s both; }
+
+.scenario-option-btn:hover {
+  border-color: var(--accent-deep);
+  background: linear-gradient(90deg, #FFF5F8 0%, #FFFFFF 100%);
+  transform: translateX(8px) scale(1.01);
+  box-shadow: 0 6px 18px rgba(231, 84, 128, 0.14);
+}
+
+.scenario-option-btn:active {
+  transform: scale(0.98);
+}
+
+.scenario-marker {
+  color: var(--accent-pink);
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  transition: all 0.25s var(--ease-spring);
+}
+
+.scenario-option-btn:hover .scenario-marker {
+  color: var(--accent-deep);
+  transform: scale(1.25) rotate(15deg);
+}
+
+.scenario-option-text {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.48;
+}
+
+/* ── Module 2 Results ───────────────────────────── */
+.module2-kind-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: linear-gradient(135deg, #FFF0F5 0%, #FFE4EC 100%);
+  border: 1.5px solid var(--accent-pink);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  margin: var(--space-4) 0 var(--space-6) 0;
+  box-shadow: 0 3px 10px rgba(231, 84, 128, 0.08);
+}
+
+.banner-sparkle {
+  font-size: 1.35rem;
+  color: #D97706;
+  display: inline-block;
+  animation: sparkleTwinkle 2.5s infinite ease-in-out;
+}
+
+.banner-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.traits-people-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.person-trait-group {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-4);
+  border: 1.5px solid var(--border-soft);
+  box-shadow: 0 6px 18px rgba(231, 84, 128, 0.08);
+  transition: transform 0.28s var(--ease-spring), box-shadow 0.28s var(--ease-smooth);
+}
+
+.person-trait-group:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(231, 84, 128, 0.15);
+  border-color: var(--accent-pink);
+}
+
+.person-trait-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.person-name-title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--accent-deep);
+}
+
+.badges-row {
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.balance-insight-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: #FFFDF9;
+  border: 1.5px solid #FCD34D;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-6);
+  text-align: left;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.12);
+  animation: floatGently 4s infinite ease-in-out;
+}
+
+.balance-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.balance-content {
+  flex: 1;
+}
+
+.balance-title {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #92400E;
+  margin-bottom: 4px;
+}
+
+.balance-description {
+  font-size: 0.94rem;
+  color: var(--text-primary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .intro-traits-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+}

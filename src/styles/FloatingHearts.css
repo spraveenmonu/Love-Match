@@ -1,0 +1,165 @@
+/* ── Floating Hearts & Ambient Romantic Atmosphere ── */
+.floating-hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Ambient Bokeh Glow Circles */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: floatGlowOrb 18s ease-in-out infinite alternate;
+}
+
+.ambient-glow.glow-1 {
+  width: 380px;
+  height: 380px;
+  top: -80px;
+  left: -80px;
+  background: radial-gradient(circle, #FFB6C1 0%, rgba(255, 182, 193, 0) 70%);
+  animation-duration: 20s;
+}
+
+.ambient-glow.glow-2 {
+  width: 440px;
+  height: 440px;
+  bottom: -100px;
+  right: -100px;
+  background: radial-gradient(circle, #FF8FAB 0%, rgba(255, 143, 171, 0) 70%);
+  animation-duration: 24s;
+  animation-delay: -6s;
+}
+
+.ambient-glow.glow-3 {
+  width: 320px;
+  height: 320px;
+  top: 45%;
+  left: 60%;
+  background: radial-gradient(circle, #FFD1DF 0%, rgba(255, 209, 223, 0) 70%);
+  animation-duration: 22s;
+  animation-delay: -12s;
+}
+
+@keyframes floatGlowOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, -30px) scale(1.15);
+  }
+  100% {
+    transform: translate(-30px, 40px) scale(0.9);
+  }
+}
+
+/* Floating Ambient Particles */
+.floating-heart-item {
+  position: absolute;
+  bottom: -50px;
+  user-select: none;
+  opacity: 0;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 2px 6px rgba(231, 84, 128, 0.2));
+}
+
+.floating-heart-item.sway-left {
+  animation: floatHeartSwayLeft var(--dur, 15s) linear infinite var(--del, 0s);
+}
+
+.floating-heart-item.sway-right {
+  animation: floatHeartSwayRight var(--dur, 16s) linear infinite var(--del, 0s);
+}
+
+@keyframes floatHeartSwayLeft {
+  0% {
+    transform: translateY(105vh) translateX(0) scale(0.65) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+    transform: translateY(85vh) translateX(-18px) scale(0.85) rotate(-10deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(45vh) translateX(16px) scale(1) rotate(12deg);
+  }
+  85% {
+    opacity: 0.7;
+    transform: translateY(12vh) translateX(-14px) scale(1.05) rotate(-6deg);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(10px) scale(1.15) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatHeartSwayRight {
+  0% {
+    transform: translateY(105vh) translateX(0) scale(0.7) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+    transform: translateY(85vh) translateX(20px) scale(0.9) rotate(12deg);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateY(48vh) translateX(-18px) scale(1.02) rotate(-14deg);
+  }
+  85% {
+    opacity: 0.7;
+    transform: translateY(15vh) translateX(15px) scale(1.08) rotate(8deg);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(-12px) scale(1.18) rotate(-18deg);
+    opacity: 0;
+  }
+}
+
+/* Individual particle placement & timing */
+.floating-heart-item.p1  { left: 6%;  font-size: 1.5rem; --dur: 15s; --del: 0s;   }
+.floating-heart-item.p2  { left: 16%; font-size: 2rem;   --dur: 13s; --del: 3.2s; }
+.floating-heart-item.p3  { left: 26%; font-size: 1.3rem; --dur: 17s; --del: 6s;   }
+.floating-heart-item.p4  { left: 38%; font-size: 2.2rem; --dur: 14s; --del: 1.5s; }
+.floating-heart-item.p5  { left: 52%; font-size: 1.6rem; --dur: 16s; --del: 5.4s; }
+.floating-heart-item.p6  { left: 64%; font-size: 2.4rem; --dur: 12s; --del: 8s;   }
+.floating-heart-item.p7  { left: 76%; font-size: 1.7rem; --dur: 18s; --del: 2.1s; }
+.floating-heart-item.p8  { left: 88%; font-size: 2.1rem; --dur: 14s; --del: 7.2s; }
+.floating-heart-item.p9  { left: 32%; font-size: 1.4rem; --dur: 19s; --del: 9.5s; }
+.floating-heart-item.p10 { left: 70%; font-size: 1.8rem; --dur: 15s; --del: 11s;  }
+.floating-heart-item.p11 { left: 45%; font-size: 1.2rem; --dur: 16s; --del: 4.5s; }
+.floating-heart-item.p12 { left: 93%; font-size: 1.5rem; --dur: 20s; --del: 1.8s; }
+
+/* Interactive Tap & Cursor Trail Sparkle Particles */
+.interactive-sparkle {
+  position: fixed;
+  pointer-events: none;
+  user-select: none;
+  font-size: 1.25rem;
+  z-index: 9999;
+  filter: drop-shadow(0 2px 8px rgba(231, 84, 128, 0.4));
+  animation: sparkleFloatOut 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes sparkleFloatOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(var(--scale, 0.8)) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--drift-x, 0px)), calc(-50% - 48px))
+      scale(calc(var(--scale, 0.8) * 1.35))
+      rotate(22deg);
+  }
+}
