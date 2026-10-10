@@ -58,7 +58,7 @@ export function getCombinedInterpretation(loveScore, knowScore) {
   const matrix = {
     'low-low': {
       title: 'The Mystery Duo',
-      description: 'You're still discovering each other — and that's exciting! There's a whole universe to explore together.',
+      description: "You're still discovering each other — and that's exciting! There's a whole universe to explore together.",
       emoji: '🔮',
     },
     'low-med': {
@@ -73,12 +73,12 @@ export function getCombinedInterpretation(loveScore, knowScore) {
     },
     'med-low': {
       title: 'Spark Without Map',
-      description: 'There's a connection, but you haven't fully explored the map yet. Time for deeper conversations!',
+      description: "There's a connection, but you haven't fully explored the map yet. Time for deeper conversations!",
       emoji: '✨',
     },
     'med-med': {
       title: 'The Balanced Bond',
-      description: 'A solid mix of chemistry and understanding. You're building something real.',
+      description: "A solid mix of chemistry and understanding. You're building something real.",
       emoji: '⚖️',
     },
     'med-high': {
@@ -88,12 +88,12 @@ export function getCombinedInterpretation(loveScore, knowScore) {
     },
     'high-low': {
       title: 'All Vibes, No Trivia',
-      description: 'Your connection is electric! Now it's time to learn the little details that make it even stronger.',
+      description: "Your connection is electric! Now it's time to learn the little details that make it even stronger.",
       emoji: '⚡',
     },
     'high-med': {
       title: 'Almost Legendary',
-      description: 'Strong connection with good understanding. A few more heart-to-hearts and you'll be unstoppable.',
+      description: "Strong connection with good understanding. A few more heart-to-hearts and you'll be unstoppable.",
       emoji: '🌟',
     },
     'high-high': {
@@ -130,7 +130,7 @@ export function getTips(knowScore, relationshipType) {
 
   if (knowScore <= 70) {
     return [
-      'You're on the right track! Try asking each other "What if…?" questions',
+      'You\'re on the right track! Try asking each other "What if…?" questions',
       isCouple
         ? 'Schedule a device-free date night once a week'
         : 'Start a shared playlist and add songs that remind you of each other',
